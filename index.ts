@@ -2,15 +2,38 @@
 // var: string, number, boolean, symbol, other...
 // the check is running befrore compiling
 
-let character = 'luigi';
+const names = ['luigi', 'vinicius', 'junior'];
 
-character = 'mario';
+names.push('toad');
+// names.push(20);
 
-console.log(character);
+// let numbers = [1, 20, 23, 414, 123, 40];
 
-const circ = (diameter: number) => {
-  return diameter * Math.PI;
+let mixed = ['ken', 10, 'chun li', true];
+
+let tarot = {
+  name: 'John Sena',
+  age: 2020,
+  skills: ["Musicianship", "Code"]
 };
 
-console.log(circ(10).toFixed(1));
+mixed.push(false);
+
+// ==============
+// explicit type
+// ==============
+
+let character: string;
+let age: number;
+let isLogged: boolean;
+
+// arrays
+
+let person: string[];
+let persona: Array<string>;
+
+persona = ["Gargamel", "Smurfs"];
+person = [];
+
+person.push("Gabriel", "Romero");
 
