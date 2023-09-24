@@ -57,4 +57,11 @@ categories = {
   quantity: 20
 };
 
+// ==================
+// Dynamic any types
+// ==================
+
+let hage: any = 20;
+
+hage = 'fodido';
 
