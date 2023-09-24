@@ -2,10 +2,28 @@
 // must be capital F
 
 let greet: Function;
+let funVoid: () => void;
+let calc: (a: number, b: number, c: string) => number;
 
-greet = () => {
-  console.log('Hello, baby');
+greet: funVoid = () => {
+  console.log('console');
 }
+
+calc = (numOne: number, numTwo: number, operation: string) => {
+  if (operation === 'sum') {
+    return numOne + numTwo;
+  } else {
+    return numOne - numTwo;
+  }
+}
+
+let logDetails: (obj: { name: string, age: number }) => void;
+
+logDetails = (obj) => {
+  console.log('Logging details: ' + obj.name + ' ' + obj.age);
+}
+
+logDetails({ name: 'Satmahaj', age: 200});
 
 // void = doesn't return anything; return is type inferred
 
@@ -28,6 +46,4 @@ type ObjWithName = { name: string, uid: StringOrNumber };
 const logIn = (user: ObjWithName) => {
   console.log(user.name);
 };
-
-logIn({ name: 'vinicius' , uid: 230193 });
 
