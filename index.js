@@ -13,14 +13,26 @@ var tarot = {
 };
 mixed.push(false);
 // ==============
-// explicit type
+// explicit types
 // ==============
 var character;
 var age;
 var isLogged;
 // arrays
+// one declaration or many declarations (type|type|type) or type|type|type
+var uid;
 var person;
 var persona;
+var Names2 = [];
+Names2.push('vinicius');
+Names2.push(20);
+uid = 200920394;
 persona = ["Gargamel", "Smurfs"];
 person = [];
 person.push("Gabriel", "Romero");
+// objects
+var categories;
+categories = {
+    substance: "Book",
+    quantity: 20
+};

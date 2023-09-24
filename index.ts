@@ -20,7 +20,7 @@ let tarot = {
 mixed.push(false);
 
 // ==============
-// explicit type
+// explicit types
 // ==============
 
 let character: string;
@@ -28,12 +28,33 @@ let age: number;
 let isLogged: boolean;
 
 // arrays
+// one declaration or many declarations (type|type|type) or type|type|type
 
+let uid: string|number;
 let person: string[];
 let persona: Array<string>;
+let Names2: (string|number)[] = [];
+
+Names2.push('vinicius');
+Names2.push(20);
+
+uid = 200920394;
 
 persona = ["Gargamel", "Smurfs"];
 person = [];
 
 person.push("Gabriel", "Romero");
+
+// objects
+
+let categories: {
+  substance: string,
+  quantity: number,
+};
+
+categories = {
+  substance: "Book",
+  quantity: 20
+};
+
 
