@@ -1,6 +1,10 @@
-import { Invoice } from './classes/invoice.js';
+import { Invoice } from './classes/Invoice.js';
+import { Payment } from './classes/Payment.js';
+import { HasFormatter } from './interfaces/HasFormatter.js';
 
 // Interfaces = enforce a structure to a class or an object
+
+let docOne: HasFormatter;
 
 interface IsPerson {
   name: string;
@@ -8,6 +12,23 @@ interface IsPerson {
   speak(a: string): void;
   spend(a: number): number;
 }
+
+/*
+*
+* const me: IsPerson = { 
+    name: 'taro',
+    age: 29,
+    speak: function(speak) {
+      console.log(this.name + ' says ' + speak);
+    },
+    spend: function(val: number) {
+      console.log(this.name + ' spent R$' + val);
+      return val;
+    }
+  };
+  console.log(me);
+* 
+*/
 
 const invOne = new Invoice('Ronald', 'Citibank Seagayi', 29.99);
 const invTwo = new Invoice('Richard', 'Nubank Fatura', 2330);

@@ -1,4 +1,22 @@
-import { Invoice } from './classes/invoice.js';
+import { Invoice } from './classes/Invoice.js';
+// Interfaces = enforce a structure to a class or an object
+var docOne;
+/*
+*
+* const me: IsPerson = {
+    name: 'taro',
+    age: 29,
+    speak: function(speak) {
+      console.log(this.name + ' says ' + speak);
+    },
+    spend: function(val: number) {
+      console.log(this.name + ' spent R$' + val);
+      return val;
+    }
+  };
+  console.log(me);
+*
+*/
 var invOne = new Invoice('Ronald', 'Citibank Seagayi', 29.99);
 var invTwo = new Invoice('Richard', 'Nubank Fatura', 2330);
 var invoices = [];
