@@ -5,6 +5,7 @@ import { HasFormatter } from './interfaces/HasFormatter.js';
 // Interfaces = enforce a structure to a class or an object
 
 let docOne: HasFormatter;
+let docTwo: HasFormatter;
 
 interface IsPerson {
   name: string;

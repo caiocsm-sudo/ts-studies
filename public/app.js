@@ -1,6 +1,7 @@
 import { Invoice } from './classes/Invoice.js';
 // Interfaces = enforce a structure to a class or an object
 var docOne;
+var docTwo;
 /*
 *
 * const me: IsPerson = {
