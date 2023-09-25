@@ -23,7 +23,7 @@ logDetails = (obj) => {
   console.log('Logging details: ' + obj.name + ' ' + obj.age);
 }
 
-logDetails({ name: 'Satmahaj', age: 200});
+logDetails({ name: 'Satmahaj', age: 200 });
 
 // void = doesn't return anything; return is type inferred
 
