@@ -1,5 +1,14 @@
 import { Invoice } from './classes/invoice.js';
 
+// Interfaces = enforce a structure to a class or an object
+
+interface IsPerson {
+  name: string;
+  age: number;
+  speak(a: string): void;
+  spend(a: number): number;
+}
+
 const invOne = new Invoice('Ronald', 'Citibank Seagayi', 29.99);
 const invTwo = new Invoice('Richard', 'Nubank Fatura', 2330);
 
