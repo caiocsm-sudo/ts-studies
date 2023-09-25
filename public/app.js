@@ -1,22 +1,11 @@
-"use strict";
-// classes
-var Invoice = /** @class */ (function () {
-    function Invoice(c, d, a) {
-        this.client = c;
-        this.details = d;
-        this.amount = a;
-    }
-    Invoice.prototype.format = function () {
-        return "".concat(this.client, " owes R$").concat(this.amount, " for ").concat(this.details);
-    };
-    return Invoice;
-}());
+import { Invoice } from './classes/invoice.js';
 var invOne = new Invoice('Ronald', 'Citibank Seagayi', 29.99);
 var invTwo = new Invoice('Richard', 'Nubank Fatura', 2330);
 var invoices = [];
 invoices.push(invOne);
+invoices.push(invTwo);
 invoices.forEach(function (inv) {
-    console.log(inv.client, inv.details, inv.amount, inv.format());
+    console.log(inv.client, inv, inv.amount, inv.format());
 });
 // inputs
 var form = document.querySelector('.new-item-form');
