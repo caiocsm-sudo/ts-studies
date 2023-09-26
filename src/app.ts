@@ -86,17 +86,33 @@ console.log(personOne);
 
 // if we try to log personOne.name it will return an error, cuz it doesn't know the properties of the object passed as parameter.
 
+// enums
+
+enum ResourceType { BOOK, AUTHOR, FILM, DIRECTOR, PERSON };
+
 interface Resource<T> {
   uid: number;
-  resourceName: string;
+  resourceName: ResourceType;
   data: T;
 }
 
 const persona: Resource<string> = {
   uid: 33,
-  resourceName: 'Fabric',
+  resourceName: ResourceType.PERSON,
   data: 'John'
 };
+
+const personaTwo: Resource<string> = {
+  uid: 22, 
+  resourceName: ResourceType.BOOK,
+  data: 'Kybalion'
+};
+
+// Tuples
+
+let arr = ['Firaga', 20, true];
+
+// if logged to the console, it will show the index, not the name. ex: 0 instead of BOOK;
 
 // Difference between ! and ? in TS -> ! = tells tsc that the value exists;
 //                                     ? = the value is optional

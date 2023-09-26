@@ -77,10 +77,29 @@ var addUID = function (obj) {
 };
 var personOne = addUID({ name: 'Mr. Tomaselli', age: 38 });
 console.log(personOne);
+// if we try to log personOne.name it will return an error, cuz it doesn't know the properties of the object passed as parameter.
+// enums
+var ResourceType;
+(function (ResourceType) {
+    ResourceType[ResourceType["BOOK"] = 0] = "BOOK";
+    ResourceType[ResourceType["AUTHOR"] = 1] = "AUTHOR";
+    ResourceType[ResourceType["FILM"] = 2] = "FILM";
+    ResourceType[ResourceType["DIRECTOR"] = 3] = "DIRECTOR";
+    ResourceType[ResourceType["PERSON"] = 4] = "PERSON";
+})(ResourceType || (ResourceType = {}));
+;
 var persona = {
     uid: 33,
-    resourceName: 'Fabric',
+    resourceName: ResourceType.PERSON,
     data: 'John'
 };
+var personaTwo = {
+    uid: 22,
+    resourceName: ResourceType.BOOK,
+    data: 'Kybalion'
+};
+// Tuples
+var arr = ['Firaga', 20, true];
+// if logged to the console, it will show the index, not the name. ex: 0 instead of BOOK;
 // Difference between ! and ? in TS -> ! = tells tsc that the value exists;
 //                                     ? = the value is optional
