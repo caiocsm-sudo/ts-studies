@@ -1,3 +1,14 @@
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 import { Invoice } from './classes/Invoice.js';
 import { Payment } from './classes/Payment.js';
 import { ListTemplate } from './classes/ListTemplate.js';
@@ -57,3 +68,19 @@ form.addEventListener('submit', function (e) {
     console.log(doc);
     list.render(doc, types.value, 'end');
 });
+// generics
+//         must be an object// must extend object
+//         can be extends { name: string } (more specific);
+var addUID = function (obj) {
+    var uid = Math.floor(Math.random() * 100);
+    return __assign(__assign({}, obj), { uid: uid });
+};
+var personOne = addUID({ name: 'Mr. Tomaselli', age: 38 });
+console.log(personOne);
+var persona = {
+    uid: 33,
+    resourceName: 'Fabric',
+    data: 'John'
+};
+// Difference between ! and ? in TS -> ! = tells tsc that the value exists;
+//                                     ? = the value is optional

@@ -71,3 +71,33 @@ form.addEventListener('submit', (e: Event) => {
   list.render(doc, types.value, 'end');
 });
 
+// generics
+
+//         must be an object// must extend object
+//         can be extends { name: string } (more specific);
+const addUID = <T extends object>(obj: T) => {
+  let uid = Math.floor(Math.random() * 100);
+  return { ...obj, uid };
+}
+
+let personOne = addUID({ name: 'Mr. Tomaselli', age: 38 });
+
+console.log(personOne);
+
+// if we try to log personOne.name it will return an error, cuz it doesn't know the properties of the object passed as parameter.
+
+interface Resource<T> {
+  uid: number;
+  resourceName: string;
+  data: T;
+}
+
+const persona: Resource<string> = {
+  uid: 33,
+  resourceName: 'Fabric',
+  data: 'John'
+};
+
+// Difference between ! and ? in TS -> ! = tells tsc that the value exists;
+//                                     ? = the value is optional
+
