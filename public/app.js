@@ -9,6 +9,15 @@ var __assign = (this && this.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
+var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
+    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+        if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+        }
+    }
+    return to.concat(ar || Array.prototype.slice.call(from));
+};
 import { Invoice } from './classes/Invoice.js';
 import { Payment } from './classes/Payment.js';
 import { ListTemplate } from './classes/ListTemplate.js';
@@ -59,11 +68,12 @@ var list = new ListTemplate(ulist);
 form.addEventListener('submit', function (e) {
     e.preventDefault();
     var doc;
+    var values = [toFrom.value, details.value, amount.valueAsNumber];
     if (types.value === 'invoice') {
-        doc = new Invoice(toFrom.value, details.value, amount.valueAsNumber);
+        doc = new (Invoice.bind.apply(Invoice, __spreadArray([void 0], values, false)))();
     }
     else {
-        doc = new Payment(toFrom.value, details.value, amount.valueAsNumber);
+        doc = new (Payment.bind.apply(Payment, __spreadArray([void 0], values, false)))();
     }
     console.log(doc);
     list.render(doc, types.value, 'end');
@@ -99,7 +109,11 @@ var personaTwo = {
     data: 'Kybalion'
 };
 // Tuples
+// assign types to array position
 var arr = ['Firaga', 20, true];
+var tup = ['Blizaga', 30, false];
+tup[0] = 'Thundaga';
+// tup[1] = 'Fire tornado' -- ts doesn't accept this and return an error
 // if logged to the console, it will show the index, not the name. ex: 0 instead of BOOK;
 // Difference between ! and ? in TS -> ! = tells tsc that the value exists;
 //                                     ? = the value is optional

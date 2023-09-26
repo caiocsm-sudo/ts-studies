@@ -61,10 +61,11 @@ let list = new ListTemplate(ulist);
 form.addEventListener('submit', (e: Event) => {
   e.preventDefault();
   let doc: HasFormatter;
+  let values: [string, string, number] = [toFrom.value, details.value, amount.valueAsNumber];
   if (types.value === 'invoice') {
-    doc = new Invoice(toFrom.value, details.value, amount.valueAsNumber);
+    doc = new Invoice(...values);
   } else {
-    doc = new Payment(toFrom.value, details.value, amount.valueAsNumber);
+    doc = new Payment(...values);
   }
   console.log(doc);
 
@@ -103,14 +104,18 @@ const persona: Resource<string> = {
 };
 
 const personaTwo: Resource<string> = {
-  uid: 22, 
+  uid: 22,
   resourceName: ResourceType.BOOK,
   data: 'Kybalion'
 };
 
 // Tuples
+// assign types to array position
 
 let arr = ['Firaga', 20, true];
+let tup: [string, number, boolean] = ['Blizaga', 30, false];
+tup[0] = 'Thundaga';
+// tup[1] = 'Fire tornado' -- ts doesn't accept this and return an error
 
 // if logged to the console, it will show the index, not the name. ex: 0 instead of BOOK;
 
